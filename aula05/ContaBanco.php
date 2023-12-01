@@ -17,10 +17,20 @@
             }
         }
         public function fecharConta (){
-            
+            if ($this -> getSaldo()>0){
+                echo "<p>Conta ainda tem dinheiro, não posso fechá-la</p>";
+            } elseif ($this -> getSaldo()<0){
+                echo "<p> Conta está em débito. Impossível encerrar!</p>";
+            } else{
+                $this -> setStatus (false);
+            }
         }
-        public function depositar (){
-            
+        public function depositar ($v){
+            if ($this -> getStatus()){
+                $this -> setSaldo ($this -> getSaldo() + $v);
+            } else{
+                echo "<p>Conta fechada. Não consigo depositar</p>";
+            }   
         }
         public function sacar (){
             
