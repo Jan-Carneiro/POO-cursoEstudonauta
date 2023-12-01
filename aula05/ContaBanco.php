@@ -32,15 +32,33 @@
                 echo "<p>Conta fechada. Não consigo depositar</p>";
             }   
         }
-        public function sacar (){
-            
+        public function sacar ($v){
+            if($this -> getStatus()){
+                if ($this -> getSaldo() > $v){
+                    $this -> setSaldo ($this -> getSaldo() - $v);
+                } else{
+                    echo "<p> Saldo insuficiente para saque</p>";
+                }
+            } else{
+                echo "<p>Não posso sacar de uma conta fechada</p>";
+            }
         }
         public function pagarMensal (){
-            
+            if ($this -> getTipo() == "CC"){
+                $v = 12;
+            } elseif ($this -> getTipo() == "CP"){
+                $v = 20;
+            }
+            if ($this -> getStatus()){
+                $this -> setSaldo ($this -> getSaldo() - $v);
+            } else{
+                echo "<p> Problemas com a conta. Não posso cobrar. </p>";
+            }    
         }
         //MÉTODOS ESPECIAIS
         public function __construct(){
-            
+            $this -> setSaldo (0);
+            $this -> setStatus (false);    
         }
         public function getNumConta(){
             return $this -> numConta;
