@@ -23,19 +23,24 @@
                 echo "<p> Conta está em débito. Impossível encerrar!</p>";
             } else{
                 $this -> setStatus (false);
+                echo "<p>Conta do " . $this->getDono() . " fechada com sucesso</p>";
+
             }
         }
         public function depositar ($v){
             if ($this -> getStatus()){
                 $this -> setSaldo ($this -> getSaldo() + $v);
+                echo "<p>Depósito de R$ $v autorizado na conta da " . $this->getDono() . "</p>";
             } else{
                 echo "<p>Conta fechada. Não consigo depositar</p>";
             }   
         }
         public function sacar ($v){
             if($this -> getStatus()){
-                if ($this -> getSaldo() > $v){
+                if ($this -> getSaldo() >= $v){
                     $this -> setSaldo ($this -> getSaldo() - $v);
+                    echo "<p>Saque de R$ $v autorizado na conta da " . $this->getDono() . "</p>";
+
                 } else{
                     echo "<p> Saldo insuficiente para saque</p>";
                 }
@@ -51,6 +56,7 @@
             }
             if ($this -> getStatus()){
                 $this -> setSaldo ($this -> getSaldo() - $v);
+                echo "<p>Debitado R$ $v de mensalidade na conta da " . $this->getDono() . "</p>";
             } else{
                 echo "<p> Problemas com a conta. Não posso cobrar. </p>";
             }    
@@ -58,7 +64,8 @@
         //MÉTODOS ESPECIAIS
         public function __construct(){
             $this -> setSaldo (0);
-            $this -> setStatus (false);    
+            $this -> setStatus (false);
+            echo "<p>Conta criada com sucesso!</p>";    
         }
         public function getNumConta(){
             return $this -> numConta;
