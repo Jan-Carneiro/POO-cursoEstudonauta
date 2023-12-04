@@ -44,7 +44,7 @@ require_once 'Controlador.php';
             echo "<br> Está tocando?:" . (($this->getTocando()) ? "SIM" : "NÃO");
             echo "<br> Volume: " . $this->getVolume();
             for ($i = 0; $i <= $this->getVolume(); $i += 10) {
-                echo "|";
+                echo " |";
             }
             echo "<br>";            
         }
@@ -54,11 +54,15 @@ require_once 'Controlador.php';
         public function maisVolume(){
             if ($this -> getLigado()){
                 $this -> setVolume ($this -> getVolume() + 5);
+            } else{
+                echo "Erro! Controle desligado, não posso aumentar o volume";
             }
         }
         public function menosVolume(){
             if ($this -> getLigado()){
                 $this -> setVolume ($this -> getVolume() - 5);
+            } else{
+                echo "Erro! Controle desligado, não posso aumentar o volume";
             }
         }
         public function ligarMudo(){
