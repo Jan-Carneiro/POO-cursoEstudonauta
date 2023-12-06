@@ -70,9 +70,24 @@
             $this ->peso = $pe;
             $this->setCategoria();  
         }
-        public function setCategoria(){
-                         
+        public function setCategoria() {
+            $peso = $this->getPeso();
+        
+            if ($peso < 52.2) {
+                $ca = "Inválido";
+            } elseif ($peso <= 70.3) {
+                $ca = "Leve";
+            } elseif ($peso <= 83.9) {
+                $ca = "Médio";
+            } elseif ($peso <= 100.2) {
+                $ca = "Pesado";
+            } else {
+                $ca = "Inválido";
+            }
+        
+            $this->categoria = $ca;
         }
+        
         public function setVitorias($vi){
             $this ->vitorias = $vi;
         }
@@ -82,7 +97,24 @@
         public function setEmpates($em){
             $this ->empates = $em;
         }
-        
+  
+        //MÉTODOS:
+
+        public function apresentar(){
+            //apresenta o currículo dos lutadores
+        }
+        public function status(){
+            //alguns dados dos lutadores aparecerão na tela
+        }
+        public function ganharLuta(){
+            //vitória do lutador em questão
+        }
+        public function perderLuta(){
+            //derrota do lutador em questão
+        }
+        public function empatarLuta(){
+            //empate do lutador em questão
+        }
         
     }
 ?>
