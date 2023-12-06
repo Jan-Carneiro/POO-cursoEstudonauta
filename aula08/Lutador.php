@@ -100,20 +100,37 @@
   
         //MÉTODOS:
 
-        public function apresentar(){
-            //apresenta o currículo dos lutadores
+        public function apresentar() {
+            // Apresenta o currículo dos lutadores
+            echo "Lutador: " . $this->getNome() . "<br>";
+            echo "Origem: ".$this->getNacionalidade() . "<br>";
+            echo $this->getIdade() . " anos" . "<br>";
+            echo $this->getAltura() . " m de altura" . "<br>";
+            echo "Pesando: " .$this->getPeso(). " kg" . "<br>";
+            echo "Perdeu: " .$this->getDerrotas(). " lutas" . "<br>";
+            echo "Empatou: ".$this->getEmpates(). " lutas" . "<br>";
         }
+        
         public function status(){
             //alguns dados dos lutadores aparecerão na tela
+            echo $this->getNome();
+            echo $this->getCategoria();
+            echo $this->getVitorias(). " vitórias";
+            echo $this->getDerrotas(). " derrotas";
+            echo $this->getEmpates(). " empates";
+           
         }
         public function ganharLuta(){
             //vitória do lutador em questão
+            $this->setVitorias($this->getVitorias() + 1);
         }
         public function perderLuta(){
             //derrota do lutador em questão
+            $this->setDerrotas($this->getDerrotas()+1);
         }
         public function empatarLuta(){
             //empate do lutador em questão
+            $this->setEmpates($this->getEmpates()+1);
         }
         
     }
