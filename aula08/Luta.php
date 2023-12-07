@@ -60,9 +60,29 @@ require_once 'Lutador.php';
                 $this->desafiante ->apresentar();
                 
                 $vencedor = rand (0,2);
-                switch($vencedor){
-                    //colocar os casos 0(empate),1(vitória do desafiado), 2 (vitória do desafiante)
+                switch ($vencedor) {
+                    case 0:
+                        // Código para empate
+                        echo "<p>A luta foi sangrenta e bastante disputada, sendo declarada EMPATE!</p>";
+                        $this->desafiado->empatarLuta();
+                        $this->desafiante->empatarLuta();
+                        break;
+                    case 1:
+                        // Código para vitória do desafiado
+                        echo "<p>" . $this->desafiado->getNome() . " venceu </p>";
+                        $this->desafiado->ganharLuta();
+                        $this->desafiante->perderLuta();
+                        break;
+                        
+                    case 2:
+                        // Código para vitória do desafiante
+                        echo "<p>".$this->desafiante->getNome()." venceu </p>";
+                        $this->desafiado->perderLuta();
+                        $this->desafiante->ganharLuta();
+                        break;
+                    
                 }
+                
             } else {
                 echo "<p>A luta não pode acontecer</p>";
             }
