@@ -70,7 +70,7 @@
             $this ->peso = $pe;
             $this->setCategoria();  
         }
-        public function setCategoria() {
+        private function setCategoria() {
             $peso = $this->getPeso();
         
             if ($peso < 52.2) {
