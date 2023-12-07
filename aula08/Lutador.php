@@ -102,6 +102,7 @@
 
         public function apresentar() {
             // Apresenta o currículo dos lutadores
+            echo "----------- APRESENTAÇÃO ----------<br>";
             echo "Lutador: " . $this->getNome() . "<br>";
             echo "Origem: ".$this->getNacionalidade() . "<br>";
             echo $this->getIdade() . " anos" . "<br>";
@@ -113,11 +114,12 @@
         
         public function status(){
             //alguns dados dos lutadores aparecerão na tela
-            echo $this->getNome();
-            echo $this->getCategoria();
-            echo $this->getVitorias(). " vitórias";
-            echo $this->getDerrotas(). " derrotas";
-            echo $this->getEmpates(). " empates";
+            echo "---------- STATUS ---------- <br>";
+            echo $this->getNome(). "<br>" ;
+            echo $this->getCategoria(). "<br>";
+            echo $this->getVitorias(). " vitórias <br>";
+            echo $this->getDerrotas(). " derrotas <br>";
+            echo $this->getEmpates(). " empates <br>";
            
         }
         public function ganharLuta(){
