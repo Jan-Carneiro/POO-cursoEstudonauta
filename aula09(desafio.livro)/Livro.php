@@ -1,5 +1,6 @@
 <?php 
 require_once 'Pessoa.php';
+require_once 'Leitor.php';
     class Livro{
         //ATRIBUTOS
         private $titulo;
@@ -11,10 +12,8 @@ require_once 'Pessoa.php';
                
 
         //MÉTODOS ESPECIAIS (construct, get, set)
-        function __construct($ti,$at,$tot){
-            $this->setTitulo($ti);
-            $this->setAutor($at);
-            $this->setTotPaginas($tot);
+        function __construct(){
+            
             
         }
         
@@ -28,7 +27,7 @@ require_once 'Pessoa.php';
         public function getTotPaginas(){
             return $this->totpaginas;
         }
-        public function PagAtual(){
+        public function getPagAtual(){
             return $this->pagatual;
         }
         public function getAberto(){
@@ -63,8 +62,68 @@ require_once 'Pessoa.php';
                
         
         public function detalhes($l1,$l2,$l3,$l4,$l5,$l6) {
-            echo "<p> Título do Livro: ".$this->getTitulo(). "</p>";          
             
+            echo "<p> Título do Livro: ".$this->getTitulo(). "</p>";          
+            echo "<p> Autor: ".$this->getAutor(). "</p>";
+            echo "<p> Número de páginas: ".$this->getTotPaginas(). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITOR___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Nome: ".$l1->getNome(). "</p>";
+            echo "<p> Idade: ".$l1->getIdade(). "</p>";
+            echo "<p> Sexo: ".$l1->getSexo(). "</p>";
+            echo "<p> Livro: ".$this->setTitulo("Senhor dos Anéis"). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITORES DO LIVRO___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Leitor: ".$l2->getNome(). "</p>";
+            echo "<p> Leitor: ".$l2->getIdade(). "</p>";
+            echo "<p> Leitor: ".$l2->getSexo(). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITORES DO LIVRO___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Leitor: ".$l3->getNome(). "</p>";
+            echo "<p> Leitor: ".$l3->getIdade(). "</p>";
+            echo "<p> Leitor: ".$l3->getSexo(). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITORES DO LIVRO___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Leitor: ".$l4->getNome(). "</p>";
+            echo "<p> Leitor: ".$l4->getIdade(). "</p>";
+            echo "<p> Leitor: ".$l4->getSexo(). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITORES DO LIVRO___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Leitor: ".$l5->getNome(). "</p>";
+            echo "<p> Leitor: ".$l5->getIdade(). "</p>";
+            echo "<p> Leitor: ".$l5->getSexo(). "</p>";
+            echo "<p> _____________________________________________________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> ______________________LEITORES DO LIVRO___________________";
+            echo "<p> _____________________________________________________________";
+            echo "<p> Leitor: ".$l6->getNome(). "</p>";
+            echo "<p> Leitor: ".$l6->getIdade(). "</p>";
+            echo "<p> Leitor: ".$l6->getSexo(). "</p>";
+            echo "<p> _____________________________________________________________";
+        }
+        public function abrir(){
+            echo "oi";
+        }
+        public function fechar(){
+
+        }
+        public function folhear(){
+
+        }
+        public function avançarPag(){
+
+        }
+        public function voltarPag(){
+
         }
         
                 

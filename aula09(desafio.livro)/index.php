@@ -19,12 +19,10 @@
     $p[4] = new Pessoa("Raiane", 35,"Feminino");
     $p[5] = new Pessoa("Takaki", 50,"Masculino");
     
-    $l1 = new Livro ("Senhor dos Aneis", "Michael", 500);
-
-    $p[5] -> fazerAniver ();
-    $l1->detalhes($p[0],$p[1],$p[2],$p[3],$p[4],$p[5]);
+    $l1 = new Livro ();
+    //$l1->detalhes($p[0],$p[1],$p[2],$p[3],$p[4],$p[5]);
     
-
+    $l1 ->abrir();
 
     
     ?>
