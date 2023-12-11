@@ -1,20 +1,25 @@
 <?php 
 require_once 'Pessoa.php';
-require_once 'Leitor.php';
-    class Livro{
+require_once 'Publicacao.php';
+
+    class Livro implements Publicacao{
         //ATRIBUTOS
         private $titulo;
         private $autor;
-        private $totpaginas;
-        private $pagatual;
+        private $totPaginas;
+        private $pagAtual;
         private $aberto;
         private $leitor;
                
 
         //MÉTODOS ESPECIAIS (construct, get, set)
-        function __construct(){
-            
-            
+        function __construct($ti,$au,$totPag,$le){
+            $this->titulo = $ti;
+            $this->autor = $au;
+            $this->totPaginas = $totPag;
+            $this->leitor = $le;
+            $this->aberto = false;
+            $this->pagAtual = 0;
         }
         
         //GET (fazer a correlação do GET com seus atributos)
@@ -25,10 +30,10 @@ require_once 'Leitor.php';
             return $this->autor;
         }
         public function getTotPaginas(){
-            return $this->totpaginas;
+            return $this->totPaginas;
         }
         public function getPagAtual(){
-            return $this->pagatual;
+            return $this->pagAtual;
         }
         public function getAberto(){
             return $this->aberto;
@@ -45,10 +50,10 @@ require_once 'Leitor.php';
             $this ->autor = $at;
         }
         public function setTotPaginas($tot){
-            $this ->totpaginas = $tot;
+            $this ->totPaginas = $tot;
         }
         public function setPagAtual($atu){
-            $this ->pagatual = $atu;
+            $this ->pagAtual = $atu;
         }
         public function setAberto($ab){
             $this ->aberto = $ab;
@@ -61,69 +66,30 @@ require_once 'Leitor.php';
 
                
         
-        public function detalhes($l1,$l2,$l3,$l4,$l5,$l6) {
-            
-            echo "<p> Título do Livro: ".$this->getTitulo(). "</p>";          
-            echo "<p> Autor: ".$this->getAutor(). "</p>";
-            echo "<p> Número de páginas: ".$this->getTotPaginas(). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITOR___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Nome: ".$l1->getNome(). "</p>";
-            echo "<p> Idade: ".$l1->getIdade(). "</p>";
-            echo "<p> Sexo: ".$l1->getSexo(). "</p>";
-            echo "<p> Livro: ".$this->setTitulo("Senhor dos Anéis"). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITORES DO LIVRO___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Leitor: ".$l2->getNome(). "</p>";
-            echo "<p> Leitor: ".$l2->getIdade(). "</p>";
-            echo "<p> Leitor: ".$l2->getSexo(). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITORES DO LIVRO___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Leitor: ".$l3->getNome(). "</p>";
-            echo "<p> Leitor: ".$l3->getIdade(). "</p>";
-            echo "<p> Leitor: ".$l3->getSexo(). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITORES DO LIVRO___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Leitor: ".$l4->getNome(). "</p>";
-            echo "<p> Leitor: ".$l4->getIdade(). "</p>";
-            echo "<p> Leitor: ".$l4->getSexo(). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITORES DO LIVRO___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Leitor: ".$l5->getNome(). "</p>";
-            echo "<p> Leitor: ".$l5->getIdade(). "</p>";
-            echo "<p> Leitor: ".$l5->getSexo(). "</p>";
-            echo "<p> _____________________________________________________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> ______________________LEITORES DO LIVRO___________________";
-            echo "<p> _____________________________________________________________";
-            echo "<p> Leitor: ".$l6->getNome(). "</p>";
-            echo "<p> Leitor: ".$l6->getIdade(). "</p>";
-            echo "<p> Leitor: ".$l6->getSexo(). "</p>";
-            echo "<p> _____________________________________________________________";
+        public function detalhes() {
+            echo "Livro: ".$this->titulo." escrito por ".$this->autor;            
+            echo "<br> Páginas: ".$this->totPaginas." / Página atual: ".$this->pagAtual;
+            echo "<br> Sendo lido por ".$this->leitor->getNome();
         }
         public function abrir(){
-            echo "oi";
+            $this->aberto = true;
         }
         public function fechar(){
-
+            $this->aberto = false;
         }
-        public function folhear(){
-
+        public function folhear($p){
+            if ($p > $this->totPaginas){
+                $this-> pagAtual = 0;
+            } else{
+                $this-> pagAtual = $p;
+            }
         }
         public function avançarPag(){
-
+            $this->pagAtual = $this->pagAtual + 1; //ou $this->pagatual ++;
+            
         }
         public function voltarPag(){
-
+            $this->pagAtual = $this->pagAtual - 1; //ou $this->pagatual --;
         }
         
                 

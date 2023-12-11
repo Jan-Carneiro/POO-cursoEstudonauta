@@ -9,9 +9,9 @@
         //MÉTODOS ESPECIAIS (construct, get, set)
         
         function __construct($no,$id,$se){
-            $this->setNome($no);
-            $this->setIdade($id);
-            $this->setSexo($se);
+            $this->setNome($no); //$this->nome = $no;
+            $this->setIdade($id); //$this->idade = $id;
+            $this->setSexo($se); //$this->sexo =$se;
             
         }
         
@@ -42,9 +42,7 @@
                
         
         public function fazerAniver() {
-            echo "--------------------------PARABÉNS-------------------------";
-            echo "<p>O ".$this->getNome(). " do sexo ".$this->getSexo()." está fazendo aniverário hoje, completanto ".$this->getIdade()." anos de idade </p>";
-            echo "-----------------------------------------------------------------------";                
+              $this->idade = $this ->idade + 1; //ou $this->idade ++;            
             
         }
         
