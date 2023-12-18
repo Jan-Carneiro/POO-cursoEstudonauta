@@ -32,7 +32,7 @@ require_once 'Pessoa.php';
                
         
         public function pagarMensalidade() {
-                        
+            echo "<p>Pagando mensalidade do aluno ".$this->nome."</p>";
             
         }
         

@@ -26,11 +26,12 @@ require_once 'Aluno.php';
                
         
         public function renovarBolsa() {
-                                    
+            echo "<p>Bolsa Renovada!</p>";                                  
         }
-        //public function renovarBolsa() {
-        //CRIAREI UMA SOBREPOSIÇÃO DA FUNÇÃO pagarMensalidade() da classe Aluno                            
-        //}
+        public function pagarMensalidade() {
+            echo "<p>".$this->nome. " é bolsista! Então paga com desconto.</p>";
+            
+        }
                 
     }
 ?>

@@ -2,9 +2,9 @@
 
     abstract class Pessoa{
         //ATRIBUTOS
-        private $nome;
-        private $sexo;
-        private $idade;       
+        protected $nome;
+        protected $sexo;
+        protected $idade;       
 
         //MÉTODOS ESPECIAIS (construct, get, set)
         function __construct(){
@@ -37,8 +37,9 @@
 
                
         
-        final public function fazerAniversario() {
-                        
+        public final function fazerAniversario() {
+            //Chamando essa função,fará mais 1 ano no atributo idade
+            $this->idade ++;                    
             
         }
         
