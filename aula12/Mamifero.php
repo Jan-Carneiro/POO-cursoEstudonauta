@@ -25,13 +25,13 @@ require_once 'Animal.php';
               
         
         public function locomover() {
-            echo "Correndo";                        
+            echo "<p>Correndo</p>";                        
         }
         public function alimentar() {
-            echo "Mamando";                    
+            echo "<p>Mamando</p>";                    
         }
         public function emitirSom() {
-            echo "Som de Mamífero";                    
+            echo "<p>Som de Mamífero</p>";                    
         }
         
                 
