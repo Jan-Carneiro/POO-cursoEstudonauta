@@ -6,10 +6,9 @@ require_once "Animal.php";
                        
 
         //MÉTODOS ESPECIAIS (construct, get, set)
-        function __construct(){
+        //CONSTRUCT      
             
-            
-        }
+        
         
         //GET (fazer a correlação do GET com seus atributos)
         public function getCorEscama(){

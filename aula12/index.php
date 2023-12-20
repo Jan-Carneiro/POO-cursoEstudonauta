@@ -21,6 +21,7 @@
 
         $m = new Mamifero();
         echo '<h1><strong><u><p>Mamífero</p></u></strong></h1>';
+        $m -> setPeso(33.5);
         $m -> locomover();
         $m -> alimentar();
         $m -> emitirSom();

@@ -39,16 +39,13 @@
         //MÉTODOS:
 
                
+        //métodos abstratos em classes abstratas. As classes abstratas não podem ser instanciadas. Método abstrato é declarado, mas não implementado na progenitora, vemos isso também nas Interfaces.
         
-        public function locomover() {
+        abstract function locomover();
                   
-        }
-        public function alimentar() {
-                   
-        }
-        public function emitirSom() {
-                   
-        }
+        abstract function alimentar();
+            
+        abstract function emitirSom();
                 
     }
 ?>
