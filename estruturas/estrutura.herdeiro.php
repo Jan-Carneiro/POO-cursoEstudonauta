@@ -7,26 +7,21 @@ require_once "Pessoa.php";
                
 
         //MÉTODOS ESPECIAIS (construct, get, set)
+        //CONSTRUCT
         function __construct(){
-            
-            
+                    
         }
         
         //GET (fazer a correlação do GET com seus atributos)
         public function getMatr(){
             return $this ->matr;
         }
-        public function getCurso(){
-            return $this ->curso;
-        }
-                
+           
         //SET (interligar o atributo com o seu parâmetro)
         public function setMatr($ma){
             $this ->matr = $ma;
         }
-        public function setCurso($cu){
-            $this ->curso = $cu;
-        }
+        
          
         //MÉTODOS:
 
