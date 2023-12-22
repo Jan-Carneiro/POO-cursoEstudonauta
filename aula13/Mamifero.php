@@ -7,9 +7,6 @@ require_once "Animall.php";
 
         //MÉTODOS ESPECIAIS (construct, get, set)
         //CONSTRUCT
-        function __construct(){
-                    
-        }
         
         //GET (fazer a correlação do GET com seus atributos)
         public function getCorPelo(){
